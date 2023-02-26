@@ -5,6 +5,7 @@
 //单链表声明代码
 //作者：Geng
 //修改日期：2018.12.27
+//Reencoding at 2023.02.26
 //版本：v1.2
 //All rights reserved
 //按Ctrl+鼠标左键（或F12)可以追踪函数
