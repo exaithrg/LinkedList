@@ -3,14 +3,14 @@
 #include"linkedlist.h"
 
 //////////////////////////////////////////////////////////////////////////////////
-//µ¥Á´±íÇı¶¯´úÂë
-//×÷Õß£ºGenng
-//ĞŞ¸ÄÈÕÆÚ£º2018.12.27
-//°æ±¾£ºv1.3
+//å•é“¾è¡¨é©±åŠ¨ä»£ç 
+//ä½œè€…ï¼šGenng
+//ä¿®æ”¹æ—¥æœŸï¼š2018.12.27
+//ç‰ˆæœ¬ï¼šv1.3
 //All rights reserved
-//°´Ctrl+Êó±ê×ó¼ü£¨»òF12)¿ÉÒÔ×·×Ùº¯Êı
-//µ÷ÊÔ»·¾³£ºVisual Studio 2017
-//ÍÆ¼öÍ·ÎÄ¼şÉùÃ÷+cÎÄ¼şÊµÏÖÖîÉùÃ÷º¯Êı+Ö÷º¯ÊıÎÄ¼şµÄ¼Ü¹¹¡£Õâ¶ÔÒ»Ğ©½Ï´óµÄÏîÄ¿ºÜÓĞ°ïÖú¡£
+//æŒ‰Ctrl+é¼ æ ‡å·¦é”®ï¼ˆæˆ–F12)å¯ä»¥è¿½è¸ªå‡½æ•°
+//è°ƒè¯•ç¯å¢ƒï¼šVisual Studio 2017
+//æ¨èå¤´æ–‡ä»¶å£°æ˜+cæ–‡ä»¶å®ç°è¯¸å£°æ˜å‡½æ•°+ä¸»å‡½æ•°æ–‡ä»¶çš„æ¶æ„ã€‚è¿™å¯¹ä¸€äº›è¾ƒå¤§çš„é¡¹ç›®å¾ˆæœ‰å¸®åŠ©ã€‚
 //
 //////////////////////////////////////////////////////////////////////////////////
 
@@ -28,12 +28,12 @@ int ListLength(LinkList head) {
 }
 LinkList InitList() {
 	Node *head;
-	head = (Node*)malloc(sizeof(Node));	//ÎªÍ·½áµã·ÖÅä´æ´¢¿Õ¼ä
+	head = (Node*)malloc(sizeof(Node));	//ä¸ºå¤´ç»“ç‚¹åˆ†é…å­˜å‚¨ç©ºé—´
 	head->next = NULL;
 	return head;
 }
 
-LinkList CreateList_A(int length) {//Í·²å·¨½¨Á¢µ¥Á´±í
+LinkList CreateList_A(int length) {//å¤´æ’æ³•å»ºç«‹å•é“¾è¡¨
 	Node *head, *p;
 	head = (Node*)malloc(sizeof(Node));
 	head->next = NULL;
@@ -43,11 +43,11 @@ LinkList CreateList_A(int length) {//Í·²å·¨½¨Á¢µ¥Á´±í
 		p->next = head->next;
 		head->next = p;
 	}
-	return head;//headÎªÍ·Ö¸Õë
+	return head;//headä¸ºå¤´æŒ‡é’ˆ
 };
 
-LinkList CreateList_B(int length) {//Î²²å·¨½¨Á¢µ¥Á´±í
-	Node *head, *last;//headÎªÍ·½áµã 
+LinkList CreateList_B(int length) {//å°¾æ’æ³•å»ºç«‹å•é“¾è¡¨
+	Node *head, *last;//headä¸ºå¤´ç»“ç‚¹ 
 	int go = 0;
 	head = (Node*)malloc(sizeof(Node));
 	if (head == NULL) {
@@ -62,19 +62,19 @@ LinkList CreateList_B(int length) {//Î²²å·¨½¨Á¢µ¥Á´±í
 		last->next = p;
 		last = p;
 		/*	p->next=head->next;
-		head->next=p;*///Í·²å·¨ 
+		head->next=p;*///å¤´æ’æ³• 
 		go++;
 	}
 	last->next = NULL;
 	return head;
 }
 ElemType ListFormerInsert(LinkList head, int i, ElemType e) {
-	Node *qian;//¶¨ÒåÇ°Çı½áµã
+	Node *qian;//å®šä¹‰å‰é©±ç»“ç‚¹
 	qian = head;
 	int go;
 	for (go = 0; qian&&go<i - 1; go++) {
 		qian = qian->next;
-	} //½«qian±ä³ÉÕæµÄqian
+	} //å°†qianå˜æˆçœŸçš„qian
 	if (!qian || go>i - 1) return ERROR;
 	Node *p;
 	p = (Node*)malloc(sizeof(Node));
@@ -89,12 +89,12 @@ ElemType ListFormerInsert(LinkList head, int i, ElemType e) {
 }
 
 ElemType ListLaterInsert(LinkList head, int i, ElemType e) {
-	Node *qian;//¶¨ÒåÇ°Çı½áµã
+	Node *qian;//å®šä¹‰å‰é©±ç»“ç‚¹
 	qian = head;
 	int go;
 	for (go = 0; qian&&go<i; go++) {
 		qian = qian->next;
-	}//Ö±½ÓÈÃqianÖ¸ÏòµÚi¸ö½áµã
+	}//ç›´æ¥è®©qianæŒ‡å‘ç¬¬iä¸ªç»“ç‚¹
 	if (!qian || go>i) return ERROR;
 	Node *p;
 	p = (Node*)malloc(sizeof(Node));
@@ -106,31 +106,31 @@ ElemType ListLaterInsert(LinkList head, int i, ElemType e) {
 
 Status InverseLinkedList(LinkList head)
 {
-	LinkList p, q;  //pÓÃÀ´±éÀúÁ´±í
-	//µ¥Á´±íÖÁÉÙÓĞÁ½¸öÔªËØ²ÅÓĞÄæÖÃÒ»Ëµ
-	//Èç¹ûhead->nextÎªNULL£¬µ¥Á´±íÎª¿Õ
-	//Èç¹ûhead->next->nextÎªNULL£¬µ¥Á´±íÖ»ÓĞÒ»¸öÔªËØ
-	//Òò´ËÈç¹ûÕâÁ½¸öÌõ¼şÂú×ãÆäÒ»£¬¾Í²»ĞèÒªÄæÖÃÖ±½ÓÊä³öÔ­Í·½áµã¼´¿É¡£
+	LinkList p, q;  //pç”¨æ¥éå†é“¾è¡¨
+	//å•é“¾è¡¨è‡³å°‘æœ‰ä¸¤ä¸ªå…ƒç´ æ‰æœ‰é€†ç½®ä¸€è¯´
+	//å¦‚æœhead->nextä¸ºNULLï¼Œå•é“¾è¡¨ä¸ºç©º
+	//å¦‚æœhead->next->nextä¸ºNULLï¼Œå•é“¾è¡¨åªæœ‰ä¸€ä¸ªå…ƒç´ 
+	//å› æ­¤å¦‚æœè¿™ä¸¤ä¸ªæ¡ä»¶æ»¡è¶³å…¶ä¸€ï¼Œå°±ä¸éœ€è¦é€†ç½®ç›´æ¥è¾“å‡ºåŸå¤´ç»“ç‚¹å³å¯ã€‚
 	if (head == NULL) {
-		printf("Á´±í²»´æÔÚ");
+		printf("é“¾è¡¨ä¸å­˜åœ¨");
 		return OK;
 	}
 	if (head->next == NULL) {
-		printf("Á´±íÎª¿Õ");
+		printf("é“¾è¡¨ä¸ºç©º");
 		return OK;
 	}
 	if (head->next->next)
 	{
-		p = q = head->next; //p,s³õÊ¼Ö¸ÏòµÚÒ»¸ö½áµã
-		p = p->next;       //pÖ¸ÏòµÚ¶ş¸ö½áµã
+		p = q = head->next; //p,såˆå§‹æŒ‡å‘ç¬¬ä¸€ä¸ªç»“ç‚¹
+		p = p->next;       //pæŒ‡å‘ç¬¬äºŒä¸ªç»“ç‚¹
 		q->next = NULL;
 		while (p)
 		{
-			q = p;        //sÖ¸Ïò´ı²åÈëµÄ½áµã
-			p = p->next;   //pÖ¸ÏòÔ­Á´±íµÄÏÂÒ»¸ö½áµã
-			//²åÈë½áµã
+			q = p;        //sæŒ‡å‘å¾…æ’å…¥çš„ç»“ç‚¹
+			p = p->next;   //pæŒ‡å‘åŸé“¾è¡¨çš„ä¸‹ä¸€ä¸ªç»“ç‚¹
+			//æ’å…¥ç»“ç‚¹
 			q->next = head->next;
-			head->next = q;           //Á½ÌõÓï¾äµÄË³Ğò²»ÄÜµßµ¹
+			head->next = q;           //ä¸¤æ¡è¯­å¥çš„é¡ºåºä¸èƒ½é¢ å€’
 		}
 		return OK;
 	}
@@ -160,7 +160,7 @@ Status DeleteElement(LinkList head, int i, ElemType &e) {
 	}
 	if (!qian || go > i - 1)
 	{
-		printf("ÎŞ·¨É¾³ıµÚ%d¸öÔªËØ£¬É¾³ıÊ§°Ü\n",i);
+		printf("æ— æ³•åˆ é™¤ç¬¬%dä¸ªå…ƒç´ ï¼Œåˆ é™¤å¤±è´¥\n",i);
 		e = 0;
 		return ERROR;
 	}
@@ -170,17 +170,17 @@ Status DeleteElement(LinkList head, int i, ElemType &e) {
 	free(q);
 	return OK;
 }
-Status PrintList(LinkList head) {//Êä³öÁ´±í
+Status PrintList(LinkList head) {//è¾“å‡ºé“¾è¡¨
 	if (head == NULL) {
-		printf("Á´±í²»´æÔÚ£¡");
+		printf("é“¾è¡¨ä¸å­˜åœ¨ï¼");
 		return OK;
 	}
-	LinkList p = head->next;//²»ÊÇp=head
+	LinkList p = head->next;//ä¸æ˜¯p=head
 	if (p == NULL) {
-		printf("Á´±íÎª¿Õ£¡");
+		printf("é“¾è¡¨ä¸ºç©ºï¼");
 		return OK;
 	}
-	while (p) {//²»ÊÇwhile(p->next)
+	while (p) {//ä¸æ˜¯while(p->next)
 		printf("%d ", p->data);
 		p = p->next;
 	}
@@ -212,39 +212,39 @@ Status DestroyList(LinkList &head) {
 }
 
 /*
-//ÍØÕ¹£¬¹ØÓÚ´«Öµ£¬´«Ö¸Õë£¬´«ÒıÓÃµ÷ÓÃ
-//´«ÒıÓÃµ÷ÓÃÊÇC++Óï·¨£¬Ò²¾ÍÊÇËµÎÄ¼şºó×º±ØĞëÊÇ.cpp²Å¿ÉÒÔÊ¹ÓÃ´«ÒıÓÃµ÷ÓÃ
-//¶¨Òåº¯Êı
-int test_A(int &a) {	//´«ÒıÓÃ
+//æ‹“å±•ï¼Œå…³äºä¼ å€¼ï¼Œä¼ æŒ‡é’ˆï¼Œä¼ å¼•ç”¨è°ƒç”¨
+//ä¼ å¼•ç”¨è°ƒç”¨æ˜¯C++è¯­æ³•ï¼Œä¹Ÿå°±æ˜¯è¯´æ–‡ä»¶åç¼€å¿…é¡»æ˜¯.cppæ‰å¯ä»¥ä½¿ç”¨ä¼ å¼•ç”¨è°ƒç”¨
+//å®šä¹‰å‡½æ•°
+int test_A(int &a) {	//ä¼ å¼•ç”¨
 	a = 1;
 	return a;
 }
-int test_B(int a) {		//´«Öµ
+int test_B(int a) {		//ä¼ å€¼
 	a = 1;
 	return a;
 }
-int test_C(int *a) {	//´«Ö¸Õë
+int test_C(int *a) {	//ä¼ æŒ‡é’ˆ
 	*a = 1;
 	return *a;
 }
-//¶ømainº¯ÊıÎª
+//è€Œmainå‡½æ•°ä¸º
 int main() {
 	int a = 2;
 	int A, B, C;
 
-	//´«ÒıÓÃµ÷ÓÃ£¬½«±äÁ¿±¾Éí´«Èëº¯ÊıÄÚ²¿£¬ºÃÓÃ£¬µ«C²»Ö§³Ö
+	//ä¼ å¼•ç”¨è°ƒç”¨ï¼Œå°†å˜é‡æœ¬èº«ä¼ å…¥å‡½æ•°å†…éƒ¨ï¼Œå¥½ç”¨ï¼Œä½†Cä¸æ”¯æŒ
 	A = test_A(a);
-	printf("´«ÒıÓÃ£ºa=%d, A=%d\n", a, A);
+	printf("ä¼ å¼•ç”¨ï¼ša=%d, A=%d\n", a, A);
 
-	//´«Öµµ÷ÓÃ£¬½«±äÁ¿¿½±´Ò»·İ´«Èëº¯ÊıÄÚ²¿
+	//ä¼ å€¼è°ƒç”¨ï¼Œå°†å˜é‡æ‹·è´ä¸€ä»½ä¼ å…¥å‡½æ•°å†…éƒ¨
 	a = 2;
 	B = test_B(a);
-	printf("´«Öµ£ºa=%d, B=%d\n", a, B);
+	printf("ä¼ å€¼ï¼ša=%d, B=%d\n", a, B);
 
-	//´«Ö¸Õëµ÷ÓÃ£¬½«±äÁ¿µØÖ·´«Èëº¯ÊıÄÚ²¿
+	//ä¼ æŒ‡é’ˆè°ƒç”¨ï¼Œå°†å˜é‡åœ°å€ä¼ å…¥å‡½æ•°å†…éƒ¨
 	a = 2;
 	C = test_C(&a);
-	printf("´«Ö¸Õë£ºa=%d, C=%d\n", a, C);
+	printf("ä¼ æŒ‡é’ˆï¼ša=%d, C=%d\n", a, C);
 
 	system("pause");
 	return 0;

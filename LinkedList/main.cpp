@@ -3,58 +3,58 @@
 #include"linkedlist.h"
 
 //////////////////////////////////////////////////////////////////////////////////
-//µ¥Á´±íÉùÃ÷´úÂë
-//×÷Õß£ºGeng
-//ÐÞ¸ÄÈÕÆÚ£º2018.12.27
-//°æ±¾£ºv1.2
+//å•é“¾è¡¨å£°æ˜Žä»£ç 
+//ä½œè€…ï¼šGeng
+//ä¿®æ”¹æ—¥æœŸï¼š2018.12.27
+//ç‰ˆæœ¬ï¼šv1.2
 //All rights reserved
-//°´Ctrl+Êó±ê×ó¼ü£¨»òF12)¿ÉÒÔ×·×Ùº¯Êý
-//µ÷ÊÔ»·¾³£ºVisual Studio 2017
-//ÍÆ¼öÍ·ÎÄ¼þÉùÃ÷+cÎÄ¼þÊµÏÖÖîÉùÃ÷º¯Êý+Ö÷º¯ÊýÎÄ¼þµÄ¼Ü¹¹¡£Õâ¶ÔÒ»Ð©½Ï´óµÄÏîÄ¿ºÜÓÐ°ïÖú¡£
+//æŒ‰Ctrl+é¼ æ ‡å·¦é”®ï¼ˆæˆ–F12)å¯ä»¥è¿½è¸ªå‡½æ•°
+//è°ƒè¯•çŽ¯å¢ƒï¼šVisual Studio 2017
+//æŽ¨èå¤´æ–‡ä»¶å£°æ˜Ž+cæ–‡ä»¶å®žçŽ°è¯¸å£°æ˜Žå‡½æ•°+ä¸»å‡½æ•°æ–‡ä»¶çš„æž¶æž„ã€‚è¿™å¯¹ä¸€äº›è¾ƒå¤§çš„é¡¹ç›®å¾ˆæœ‰å¸®åŠ©ã€‚
 //////////////////////////////////////////////////////////////////////////////////
 
 #pragma warning (disable: 4996)	
-//¸ß°æ±¾Visual Studio²»Ö§³ÖscanfµÈº¯Êý£¬»á±¨´íC4996£¬ÕâÀïÆÁ±ÎµôÕâ¸öErrorÇ¿ÐÐÔËÐÐ³ÌÐò
+//é«˜ç‰ˆæœ¬Visual Studioä¸æ”¯æŒscanfç­‰å‡½æ•°ï¼Œä¼šæŠ¥é”™C4996ï¼Œè¿™é‡Œå±è”½æŽ‰è¿™ä¸ªErrorå¼ºè¡Œè¿è¡Œç¨‹åº
 
-int main()//Á´±íµÄ²Ù×÷
+int main()//é“¾è¡¨çš„æ“ä½œ
 {
-	system("color 1F");		//°ÑÊä³öºÚ¿ò¿ò±ä³ÉÉîÀ¶µ×...»¹ÓÐ²»ÉÙÖµ¿ÉÒÔ³¢ÊÔ
-	printf("Á´±íÀàËÆ¶¯Ì¬Êý×é£¬¿ÉÒÔ°´ÕÕÊµ¼ÊÐèÒª´æ´¢µÄÊý¾ÝÁ¿À´±ä¸ü³¤¶È£¬´Ó¶øÊµÏÖ¶Ô´æ´¢¿Õ¼äµÄÓÐÐ§ÀûÓÃ¡£\n");
-	printf("ÓÉÓÚµ¥Á´±íµÄ½á¹¹ÌØµã£¬²åÈëÉ¾³ý²Ù×÷·Ç³£¸ßÐ§£¬µ«ÔªËØ²»ÄÜÖ±½Ó·ÃÎÊ¶ø±ØÐëÒª´ÓÍ·±éÀúÑ°ÕÒ£¬Òò´Ë¶ÔÓÚÐèÒª´óÁ¿²éÕÒµÄÓ¦ÓÃÁ´±íÐ§ÂÊ½Ï²î¡£\n");
+	system("color 1F");		//æŠŠè¾“å‡ºé»‘æ¡†æ¡†å˜æˆæ·±è“åº•...è¿˜æœ‰ä¸å°‘å€¼å¯ä»¥å°è¯•
+	printf("é“¾è¡¨ç±»ä¼¼åŠ¨æ€æ•°ç»„ï¼Œå¯ä»¥æŒ‰ç…§å®žé™…éœ€è¦å­˜å‚¨çš„æ•°æ®é‡æ¥å˜æ›´é•¿åº¦ï¼Œä»Žè€Œå®žçŽ°å¯¹å­˜å‚¨ç©ºé—´çš„æœ‰æ•ˆåˆ©ç”¨ã€‚\n");
+	printf("ç”±äºŽå•é“¾è¡¨çš„ç»“æž„ç‰¹ç‚¹ï¼Œæ’å…¥åˆ é™¤æ“ä½œéžå¸¸é«˜æ•ˆï¼Œä½†å…ƒç´ ä¸èƒ½ç›´æŽ¥è®¿é—®è€Œå¿…é¡»è¦ä»Žå¤´éåŽ†å¯»æ‰¾ï¼Œå› æ­¤å¯¹äºŽéœ€è¦å¤§é‡æŸ¥æ‰¾çš„åº”ç”¨é“¾è¡¨æ•ˆçŽ‡è¾ƒå·®ã€‚\n");
 	ElemType elem_test;
 	int ElemNum = 0;
 	int i;
-	LinkList head = InitList();		//ÓÃÓÚÍ·²å·¨½¨Á¢Á´±í
-	LinkList head2 = InitList();	//ÓÃÓÚÎ²²å·¨½¨Á¢Á´±í
-	printf("Á´±í½¨Á¢²âÊÔ£ºÇëÊäÈëÁ´±íÔªËØ¸öÊý£º");
+	LinkList head = InitList();		//ç”¨äºŽå¤´æ’æ³•å»ºç«‹é“¾è¡¨
+	LinkList head2 = InitList();	//ç”¨äºŽå°¾æ’æ³•å»ºç«‹é“¾è¡¨
+	printf("é“¾è¡¨å»ºç«‹æµ‹è¯•ï¼šè¯·è¾“å…¥é“¾è¡¨å…ƒç´ ä¸ªæ•°ï¼š");
 	scanf("%d", &ElemNum);
 	for (i = 0; i < ElemNum; i++) {
-		printf("ÇëÊäÈëµÚ%d¸öÔªËØ£¨ÕûÊý£©£º", i + 1);
+		printf("è¯·è¾“å…¥ç¬¬%dä¸ªå…ƒç´ ï¼ˆæ•´æ•°ï¼‰ï¼š", i + 1);
 		scanf("%d", &elem_test);
 		ListFormerInsert(head, 1, elem_test);
 		ListLaterInsert(head2, i, elem_test);
 	}
-	printf("Í·²å·¨½¨Á¢µÄÁ´±íÎª£º");
+	printf("å¤´æ’æ³•å»ºç«‹çš„é“¾è¡¨ä¸ºï¼š");
 	PrintList(head);
-	printf("Î²²å·¨½¨Á¢µÄÁ´±íÎª£¨¸ÃÁ´±íºóÐø²»ÔÙÊ¹ÓÃ£©£º");
+	printf("å°¾æ’æ³•å»ºç«‹çš„é“¾è¡¨ä¸ºï¼ˆè¯¥é“¾è¡¨åŽç»­ä¸å†ä½¿ç”¨ï¼‰ï¼š");
 	PrintList(head2);
-	printf("\nÉ¾³ýÊý¾Ý²âÊÔ£ºÇëÊäÈëÉ¾³ýÁ´±íÖÐµÄµÚ¼¸¸öÔªËØ\n");
+	printf("\nåˆ é™¤æ•°æ®æµ‹è¯•ï¼šè¯·è¾“å…¥åˆ é™¤é“¾è¡¨ä¸­çš„ç¬¬å‡ ä¸ªå…ƒç´ \n");
 	scanf("%d", &i);
 	if (DeleteElement(head, i, elem_test)) {
-		printf("É¾³ýµÄÊý¾ÝÎª%d\n", elem_test);
+		printf("åˆ é™¤çš„æ•°æ®ä¸º%d\n", elem_test);
 	}
-	printf("´ËÊ±Á´±íÎª£º\n");
+	printf("æ­¤æ—¶é“¾è¡¨ä¸ºï¼š\n");
 	PrintList(head);
-	printf("\nÁ´±íÄæÖÃ²âÊÔ£º\n");
-	printf("ÄæÖÃ½á¹û£º\n");
-	InverseLinkedList(head);	//¾ÍµØÄæÖÃ¡£Á´±íµÄÓÅÊÆ²Ù×÷Ö®Ò»¡£
-	PrintList(head);			//Êä³öÄæÖÃ½á¹û
-	printf("\nÁ´±íÇå¿Õ²âÊÔ£º\n");
+	printf("\né“¾è¡¨é€†ç½®æµ‹è¯•ï¼š\n");
+	printf("é€†ç½®ç»“æžœï¼š\n");
+	InverseLinkedList(head);	//å°±åœ°é€†ç½®ã€‚é“¾è¡¨çš„ä¼˜åŠ¿æ“ä½œä¹‹ä¸€ã€‚
+	PrintList(head);			//è¾“å‡ºé€†ç½®ç»“æžœ
+	printf("\né“¾è¡¨æ¸…ç©ºæµ‹è¯•ï¼š\n");
 	ClearList(head);
-	PrintList(head);	//Êä³öÇå¿ÕµÄÁ´±í¡£Á´±íµÄÇå¿ÕÓë·ñÈ¡¾öÓÚhead->nextÊÇ·ñÎªNULL
-	printf("\nÁ´±íÏú»Ù²âÊÔ£º\n");
+	PrintList(head);	//è¾“å‡ºæ¸…ç©ºçš„é“¾è¡¨ã€‚é“¾è¡¨çš„æ¸…ç©ºä¸Žå¦å–å†³äºŽhead->nextæ˜¯å¦ä¸ºNULL
+	printf("\né“¾è¡¨é”€æ¯æµ‹è¯•ï¼š\n");
 	DestroyList(head);
-	PrintList(head);	//Êä³ö²»´æÔÚµÄÁ´±í¡£Á´±íµÄ´æÔÚÓë·ñÈ¡¾öÓÚheadÊÇ·ñÎªNULL
+	PrintList(head);	//è¾“å‡ºä¸å­˜åœ¨çš„é“¾è¡¨ã€‚é“¾è¡¨çš„å­˜åœ¨ä¸Žå¦å–å†³äºŽheadæ˜¯å¦ä¸ºNULL
 	printf("\n");
 	system("pause");
 	return 0;
